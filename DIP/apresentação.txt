@@ -1,0 +1,9 @@
+Dependency inversion principle
+
+
+(1) módulos de alto nível não devem depender de módulos de baixo nível e ambos devem depender de abstrações;
+(2) abstrações não devem depender de detalhes, mas detalhes devem depender de abstrações
+
+importante:
+-Injeção de dependência x inversão de dependencia: Injeção de dependencia implementa o DIP
+-Repositório é ser um serviço para as entidades, que abstrai a camada de persistência da aplicação e atua como API para os serviços de aplicação 
