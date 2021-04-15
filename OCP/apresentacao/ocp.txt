@@ -1,0 +1,5 @@
+OPEN CLOSED PRINCIPLE
+
+-Todo componente deve estar aberto para expansão e aberto para mudanças
+-Exemplo dos plugins dos browsers
+-Implementações de caso de uso devem referenciar abstrações

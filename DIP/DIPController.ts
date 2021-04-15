@@ -1,21 +1,27 @@
 import express, {Request, Response} from 'express';
-import Contrato from './entities/Contrato';
-import ContratoService from './application/ContratoService';
-import Estoque from './entities/Estoque';
-import Produto from './entities/Produto';
+import GeradorNotaFiscal from './application/GeradorNotaFiscal';
+import EnviadorEmailNovo from './refatoracao/EnviadorEmailNovo';
+import GeradorNotaFiscalNovo from './refatoracao/GeradorNotaFiscalNovo';
+import NotaFiscalRepositoryNovo from './refatoracao/NotaFiscalRepositoryNovo';
+import SAPServiceNovo from './refatoracao/SAPServiceNovo';
 
 export default class DIPController {
 
   executar(req:Request, res:Response) {
-    const produto = new Produto("cadeira");
-    const estoque = new Estoque(produto, 100);
-    const contrato = new Contrato(100,
-                                  50,
-                                  'J',
-                                  produto);
-                                  
-    const contratoService = new ContratoService();
-    contratoService.consolidar(contrato)
+    const geradorNF = new GeradorNotaFiscal();
+    geradorNF.gerarNota();
+    
+    res.json();
+  }
+
+  executarRefatorado(req:Request, res:Response) {
+    const geradorNF = new GeradorNotaFiscalNovo();
+    geradorNF.adicionarAcao(new EnviadorEmailNovo());
+    geradorNF.adicionarAcao(new SAPServiceNovo());
+    geradorNF.adicionarAcao(new NotaFiscalRepositoryNovo());
+
+    geradorNF.gerarNota();
+    
     res.json();
   }
 }
