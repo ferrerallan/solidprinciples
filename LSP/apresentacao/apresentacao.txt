@@ -1,0 +1,9 @@
+O Princípio de Substituição de Liskov. O princípio define que os objetos de uma superclasse 
+devem ser substituídos por objetos de suas subclasses sem quebrar a aplicação. 
+Isso requer que os objetos de suas subclasses se comportem da mesma maneira que os objetos de sua superclasse.
+
+
+"Crie suas classes pensando em herança, ou então proíba-as" - Jushua Bloch (Engenheiro de software ex-google e liderou a 
+concepção e implementação de inúmeras funcionalidades da plataforma Java, incluindo o Java Collections)
+
+De modo geral, é boa prática favorecer a COMPOSIÇÃO ao invés de herança

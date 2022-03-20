@@ -1,0 +1,10 @@
+Single responsability principle
+
+-Uma classe deve possuir somente uma responsabilidade;
+-Uma classe deve ter um, e somente um, motivo para ser modificada;
+
+
+Evitar:
+-intimidade inapropriada
+-fat controllers
+
